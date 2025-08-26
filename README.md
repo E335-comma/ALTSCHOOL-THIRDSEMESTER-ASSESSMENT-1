@@ -81,7 +81,5 @@ S3 Static Site Link: https://cloudlaunch-site-bucket12.s3.eu-north-1.amazonaws.c
 The formatted JSON policy atteched to the IAM user:
 
 Console URL: https://533267399139.signin.aws.amazon.com/console
-- User Credentials: 
-    - Username: cloudlaunch-user
-    - Password: jJX21(1b
+  
   
