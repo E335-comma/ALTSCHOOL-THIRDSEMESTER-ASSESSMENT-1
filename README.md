@@ -70,15 +70,13 @@ I created terraform file (storage.tf) for creating three S3 buckets in aws regio
   - cloudlaunch-db-sg which allows MySQL(port 3306) access from app subnet only by including ingress and egress in my terraform code.
   
 After that I went ahead to initialize the backend by running "terraform init", after it was successful, I ran terraform validate to confirm if evrything I've written so far in my terraform files are valid, and afer the validation, I went ahead to run terraform apply which was successful.
-Below is a picture of its success:
-
-
 
 ---
 ## Submission
 S3 Static Site Link: https://cloudlaunch-site-bucket12.s3.eu-north-1.amazonaws.com/index.html
 
 The formatted JSON policy atteched to the IAM user:
+<pre> ```json { "Version": "2012-10-17", "Statement": [ { "Sid": "AllowListAllBuckets", "Effect": "Allow", "Action": "s3:ListBucket", "Resource": "arn:aws:s3:::*" }, { "Sid": "AllowS3PutAndGet", "Effect": "Allow", "Action": [ "s3:PutObject", "s3:GetObject" ], "Resource": "arn:aws:s3:::cloudlaunch-private-bucket-13/*" }, { "Sid": "DenyDeleteObjectEverywhere", "Effect": "Deny", "Action": "s3:DeleteObject", "Resource": "arn:aws:s3:::*/*" }, { "Sid": "DenyAllAccessToSpecificBucket", "Effect": "Deny", "Action": "s3:*", "Resource": "arn:aws:s3:::cloudlaunch-visible-only-bucket14/*" } ] } ``` </pre>
 
 Console URL: https://533267399139.signin.aws.amazon.com/console
   
